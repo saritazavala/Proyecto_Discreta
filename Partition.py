@@ -1,8 +1,7 @@
 #Universidad del Valle de Guatemala
-#Matemática Discreta
 #Sara Nohemi Zavala Gutierrez
 #Carnet: 18893
-#Particiones de un numero entero
+#Pro
 
 def partitionsOf(n):
     a = [0 for i in range(n + 1)]
@@ -26,11 +25,18 @@ def partitionsOf(n):
         y = x + y - 1
         yield a[:k + 1]
 
+def mainMenu():
+	return '''
+	\n\tMenu Principal
+	\n1. Calcular particiones
+	\n2. Salir
+	'''
 
 def calculatePartitions():
+	
 	n = input("\n\nIngrese un numero N: ")
 	particiones = partitionsOf(int(n))
-	
+	#print("\nExisten", len(list(particiones)), "particiones del numero", n)
 
 	k = input("\nIngrese longitud de particiones a desplegar: ")
 	for i in particiones:
@@ -40,17 +46,28 @@ def calculatePartitions():
 			print(i)
 
 
-wantsToContinue = True
 
-while wantsToContinue:
 
-	print(mainMenu())
-	
-	op = input("\nIngrese una opcion: ")
 
-	if op == '1':
-		calculatePartitions()
-	elif op == '2':
-		wantsToContinue = False
-	else:
-		print("\nERROR: La opcion ingresada no es valida.")
+
+print("-----------------------------------------------")
+print("        Particiones de números enteros"         ) 
+print("-----------------------------------------------")
+print("")
+while True:
+    print("*******************************")
+    print("        Menu de opciones "      )
+    print("*******************************")
+
+    print("1. Calular partición de numero n")
+    print("2. Mensaje")
+    print("3. Salir")
+    print('')
+    opcion = input("Ingrese opcion deseada")
+
+    if opcion == "1":
+        calculatePartitions()
+    elif opcion == "2" :
+        break
+    else:
+        print("Inngrese opcion válida")

@@ -1,5 +1,5 @@
 #Universidad del Valle de Guatemala
-#Matemática Discreta
+#Matemática Discreta 
 #Sara Nohemi Zavala Gutierrez 18893
 #André Rodríguez 18332
 #Ricardo Valenzuela 18762
@@ -26,8 +26,6 @@ def create_partition(number):
         a[k] = x + y
         y = x + y - 1
         yield a[:k + 1]
-
-
 
 ################################################################################
 

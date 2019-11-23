@@ -5,6 +5,7 @@
 #Ricardo Valenzuela 18762
 #Proyecto: Particiones de un entero
 
+#Algoritmo de Jerome Kelleher
 def create_partition(number):
     a = [0 for i in range(number + 1)]
     k = 1
@@ -42,20 +43,27 @@ while True:
     print("2. Mensaje")
     print("3. Salir")
     print('')
-    opcion = input("Ingrese opcion deseada ")
+    opcion = input("Ingrese opcion deseada ")   
 
-    if opcion == "1":
-        number_parameter = input("Ingrese un número ")
-        particiones = create_partition(int(n))
-        k = input("Ingrese longitud a la que desea realizar la partición: ")
-        for i in particiones:
-            if int(k) == 0:
-                print(i)
-	    elif len(i) == int(k):
-                print(i)
-    elif opcion == "2":
-        print("Salvemos el semestre juntos")
-    elif opcion == "3" :
-        break
-    else:
-        print("Inngrese opcion válida")
+    try:
+        if opcion == "1":
+            number_parameter = input("Ingrese un número ")
+            particiones = create_partition(int(number_parameter))
+            k_longitud = input("Ingrese longitud a la que desea realizar la partición: ")
+            for elemnt in particiones:
+                if int(k_longitud) == 0:
+                    print(elemnt)
+                elif len(elemnt) == int(k_longitud):
+                    print(elemnt)
+    
+        
+        elif opcion == "2":
+            print("-----------------------------------")
+            print("Salvemos el semestre juntos")
+            print("-----------------------------------")
+        elif opcion == "3" :
+            break
+        else:
+            print("Inngrese opcion válida")
+    except:
+        print("An exception occurred")

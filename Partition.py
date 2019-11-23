@@ -1,5 +1,8 @@
-
-
+#Universidad del Valle de Guatemala
+#Matemática Discreta
+#Sara Nohemi Zavala Gutierrez
+#Carnet: 18893
+#Particiones de un numero entero
 
 def partitionsOf(n):
     a = [0 for i in range(n + 1)]

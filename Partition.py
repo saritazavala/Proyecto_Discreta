@@ -54,15 +54,11 @@ while True:
             number_parameter = input("Ingrese un número ")
             particiones = create_partition(int(number_parameter))
             k_longitud = input("Ingrese longitud a la que desea realizar la partición: ")
-            if k_longitud> number_parameter:
-                print("la longitud es mayor al numero que se quiere partir")
-            else: 
-                for elemnt in particiones:
-                    if int(k_longitud) == 0:
-                        print(elemnt)
-                    elif len(elemnt) == int(k_longitud):
-                        print(elemnt)
-                      
+            for elemnt in particiones:
+                if int(k_longitud) == 0:
+                    print(elemnt)
+                elif len(elemnt) == int(k_longitud):
+                    print(elemnt)
     #Extra para salvar el semestre
         elif opcion == "2":
             print("-----------------------------------")

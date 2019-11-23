@@ -12,18 +12,18 @@ def create_partition(number):
     y = number - 1
     while k != 0:
         x = a[k - 1] + 1
-        k -= 1
+        k = k-1
         while 2 * x <= y:
             a[k] = x
-            y -= x
-            k += 1
+            y = y-x
+            k = k+ 1
         l = k + 1
         while x <= y:
             a[k] = x
             a[l] = y
             yield a[:k + 2]
-            x += 1
-            y -= 1
+            x = x+1
+            y = y-1
         a[k] = x + y
         y = x + y - 1
         yield a[:k + 1]
@@ -49,25 +49,26 @@ while True:
 #Luego se hace un ciclo for
 #Dentro del ciclo, para cada particion, se verifica si k (longitud) es 0 o no
 #Si no es igual a 0, la lungitud de la particion va a ser la longitud final
-    try:
-        if opcion == "1":
-            number_parameter = input("Ingrese un número ")
-            particiones = create_partition(int(number_parameter))
-            k_longitud = input("Ingrese longitud a la que desea realizar la partición: ")
-            for elemnt in particiones:
-                if int(k_longitud) == 0:
-                    print(elemnt)
-                elif len(elemnt) == int(k_longitud):
-                    print(elemnt)
+ 
+    if opcion == "1":
+        number_parameter = input("Ingrese un número ")
+        particiones = create_partition(int(number_parameter))
+        k_longitud = input("Ingrese longitud a la que desea realizar la partición: ")
+        for i in particiones:
+            if int(k_longitud) == 0:
+                print(i)
+            elif len(i) == int(k_longitud):
+                print(i)
+	   
+
     #Extra para salvar el semestre
-        elif opcion == "2":
-            print("-----------------------------------")
-            print("Salvemos el semestre juntos")
-            print("-----------------------------------")
+    elif opcion == "2":
+        print("-----------------------------------")
+        print("Salvemos el semestre juntos")
+        print("-----------------------------------")
     # Salir del programa        
-        elif opcion == "3" :
+    elif opcion == "3" :
             break
-        else:
-            print("Inngrese opcion válida")
-    except:
-        print("An exception occurred")
+    else:
+        print("Inngrese opcion válida")
+    

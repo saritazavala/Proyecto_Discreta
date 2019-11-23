@@ -1,12 +1,14 @@
 #Universidad del Valle de Guatemala
-#Sara Nohemi Zavala Gutierrez
-#Carnet: 18893
-#Pro
+#Matemática Discreta
+#Sara Nohemi Zavala Gutierrez 18893
+#André Rodríguez 18332
+#Ricardo Valenzuela 18762
+#Proyecto: Particiones de un entero
 
-def partitionsOf(n):
-    a = [0 for i in range(n + 1)]
+def create_partition(number):
+    a = [0 for i in range(number + 1)]
     k = 1
-    y = n - 1
+    y = number - 1
     while k != 0:
         x = a[k - 1] + 1
         k -= 1
@@ -25,30 +27,9 @@ def partitionsOf(n):
         y = x + y - 1
         yield a[:k + 1]
 
-def mainMenu():
-	return '''
-	\n\tMenu Principal
-	\n1. Calcular particiones
-	\n2. Salir
-	'''
-
-def calculatePartitions():
-	
-	n = input("\n\nIngrese un numero N: ")
-	particiones = partitionsOf(int(n))
-	#print("\nExisten", len(list(particiones)), "particiones del numero", n)
-
-	k = input("\nIngrese longitud de particiones a desplegar: ")
-	for i in particiones:
-		if int(k) == 0:
-			print(i)
-		elif len(i) == int(k):
-			print(i)
 
 
-
-
-
+################################################################################
 
 print("-----------------------------------------------")
 print("        Particiones de números enteros"         ) 
@@ -63,11 +44,20 @@ while True:
     print("2. Mensaje")
     print("3. Salir")
     print('')
-    opcion = input("Ingrese opcion deseada")
+    opcion = input("Ingrese opcion deseada ")
 
     if opcion == "1":
-        calculatePartitions()
-    elif opcion == "2" :
+        number_parameter = input("Ingrese un número ")
+        particiones = create_partition(int(n))
+        k = input("Ingrese longitud a la que desea realizar la partición: ")
+        for i in particiones:
+            if int(k) == 0:
+                print(i)
+	    elif len(i) == int(k):
+                print(i)
+    elif opcion == "2":
+        print("Salvemos el semestre juntos")
+    elif opcion == "3" :
         break
     else:
         print("Inngrese opcion válida")

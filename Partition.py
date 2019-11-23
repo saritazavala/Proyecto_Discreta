@@ -26,18 +26,11 @@ def partitionsOf(n):
         y = x + y - 1
         yield a[:k + 1]
 
-def mainMenu():
-	return '''
-	\n\tMenu Principal
-	\n1. Calcular particiones
-	\n2. Salir
-	'''
 
 def calculatePartitions():
-	
 	n = input("\n\nIngrese un numero N: ")
 	particiones = partitionsOf(int(n))
-	#print("\nExisten", len(list(particiones)), "particiones del numero", n)
+	
 
 	k = input("\nIngrese longitud de particiones a desplegar: ")
 	for i in particiones:
